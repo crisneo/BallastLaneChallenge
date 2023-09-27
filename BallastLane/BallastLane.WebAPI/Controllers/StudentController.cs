@@ -46,8 +46,8 @@ namespace WebApplication1.Controllers
             return Ok(student);
         }
 
-        [HttpPut("{id}")]
-        public async Task<IActionResult> Put(int id, [FromBody] StudentUpdateDto dto)
+        [HttpPut]
+        public async Task<IActionResult> Put([FromBody] StudentUpdateDto dto)
         {
             if (!ModelState.IsValid)
             {
