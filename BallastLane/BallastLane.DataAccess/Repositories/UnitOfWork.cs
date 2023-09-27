@@ -13,18 +13,17 @@ namespace BallastLane.DataAccess.Repositories
 {
     public class UnitOfWork : IUnitOfWork
     {
-        private readonly ApplicationDataContext _dbContext;
+        private readonly IDataBaseContext _dbContext;
         private Hashtable _repositories;
-        private bool disposed;
 
-        public UnitOfWork(ApplicationDataContext dbContext)
+        public UnitOfWork(IDataBaseContext dbContext)
         {
             _dbContext = dbContext ?? throw new ArgumentNullException(nameof(dbContext));
         }
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            //todo: implement
         }
 
         public IGenericRepository<T> Repository<T>() where T : BaseEntity

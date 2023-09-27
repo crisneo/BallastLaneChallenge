@@ -13,7 +13,6 @@ namespace BallastLane.Application.Dto.Student
         public string FirstName { get; set; }
         [Required]
         public string LastName { get; set; }
-        public string Address { get; set; }
         public string PhoneNumber { get; set; }
         [Required]
         public string Code { get; set; }

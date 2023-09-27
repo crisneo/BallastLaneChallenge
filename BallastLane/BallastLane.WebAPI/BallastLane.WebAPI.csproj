@@ -13,9 +13,9 @@
 
 	<ItemGroup>
 		<ProjectReference Include="..\BallastLane.Application\BallastLane.Application.csproj" />
+		<ProjectReference Include="..\BallastLane.DataAccess\BallastLane.DataAccess.csproj" />
 		<ProjectReference Include="..\BallastLane.Domain\BallastLane.Domain.csproj" />
 		<ProjectReference Include="..\BallastLane.Infrastructure\BallastLane.Infrastructure.csproj" />
-		<ProjectReference Include="..\BallastLane.Persistence\BallastLane.DataAccess.csproj" />
 	</ItemGroup>
 
 </Project>

@@ -59,12 +59,14 @@ namespace BallastLane.DataAccess.Contexts
         public async Task<T> SaveOrUpdateEntity<T>(T entity) where T : BaseEntity
         {
             await _session.SaveOrUpdateAsync(entity);
+            _session.Flush();
             return entity;
         }
 
         public async Task Delete(BaseEntity entity)
         {
             await _session.DeleteAsync(entity);
+            _session.Flush();
         }
     }
 }

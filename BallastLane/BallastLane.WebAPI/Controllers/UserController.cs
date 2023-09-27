@@ -18,7 +18,7 @@ namespace BallastLane.WebAPI.Controllers
         }
 
         // GET: api/<UserController>
-        [HttpGet]
+        [HttpPost]
         [Route("authenticate")]
         public IActionResult Authenticate([FromBody] AuthenticateDto dto)
         {

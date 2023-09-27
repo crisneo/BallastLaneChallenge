@@ -1,12 +1,13 @@
 using BallastLane.DataAccess.Extensions;
+using BallastLane.Infrastructure.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("appConnString");
 builder.Services.AddNHibernatePersistence(connectionString);
-//builder.Services.AddRepositories(connectionString);
-
+builder.Services.AddInfrastructureServices();
+builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
