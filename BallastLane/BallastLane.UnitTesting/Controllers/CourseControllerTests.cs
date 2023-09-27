@@ -37,15 +37,14 @@ namespace BallastLane.UnitTesting.Controllers
             var actionResult = await controller.Get();
             var contentResult = actionResult as OkObjectResult;
 
-            // Assert
             Assert.IsNotNull(contentResult);
             Assert.IsNotNull(contentResult.Value);
+            mockCourseRepo.Verify(x => x.GetAllAsync(), Times.Once);
         }
 
         [Test]
         public async Task PostCourseTest()
         {
-            // This version uses a mock UrlHelper.
             var courseMock = new Course()
             {
                 Id = 1,
@@ -70,11 +69,9 @@ namespace BallastLane.UnitTesting.Controllers
 
             var controller = new CoursesController(mockRepository.Object, mapperMock.Object, mockLogger.Object);
 
-            // Act
             var actionResult = await controller.Post(new CourseCreateDto());
             var contentResult = actionResult as OkObjectResult;
 
-            // Assert
             Assert.IsNotNull(contentResult);
             Assert.IsNotNull(contentResult.Value);
             var courseResult = contentResult.Value as Course;
