@@ -14,7 +14,11 @@ namespace BallastLane.WebAPI.MapperProfiles
             CreateMap<Student, StudentReadDto>();
             CreateMap<StudentDto, Student>();
             CreateMap<Course, CourseDto>();
+            CreateMap<Course, CourseReadDto>();
+            CreateMap<CourseReadDto, Course>();
+            CreateMap<CourseCreateDto, Course>();
             CreateMap<User, UserDto>();
+            CreateMap<UserDto, User>();
         }
     }
 }

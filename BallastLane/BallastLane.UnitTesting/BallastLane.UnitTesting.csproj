@@ -12,6 +12,7 @@
 	<ItemGroup>
 		<PackageReference Include="AutoMapper" Version="12.0.1" />
 		<PackageReference Include="EntityFramework" Version="6.4.4" />
+		<PackageReference Include="Microsoft.AspNet.WebApi.Core" Version="5.2.9" />
 		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.5.0" />
 		<PackageReference Include="MockQueryable.Core" Version="7.0.0" />
 		<PackageReference Include="MockQueryable.Moq" Version="7.0.0" />
@@ -25,10 +26,7 @@
 	<ItemGroup>
 		<ProjectReference Include="..\BallastLane.DataAccess\BallastLane.DataAccess.csproj" />
 		<ProjectReference Include="..\BallastLane.Infrastructure\BallastLane.Infrastructure.csproj" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="Controllers\" />
+		<ProjectReference Include="..\BallastLane.WebAPI\BallastLane.WebAPI.csproj" />
 	</ItemGroup>
 
 </Project>

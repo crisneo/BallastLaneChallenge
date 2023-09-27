@@ -12,7 +12,8 @@ namespace BallastLane.Infrastructure.Services
     {
         public void Log(ILogMessage logMessage)
         {
-            throw new NotImplementedException();
+            //TODO: implement logic for logging messages
+            // we can use a library like Log4Net or Application Insights for Azure
         }
     }
 }
