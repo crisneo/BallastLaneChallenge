@@ -7,25 +7,16 @@ using BallastLane.Domain.Entities;
 using BallastLane.Domain.Entities.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web.Http;
-using System.Web.Http.Results;
+
 using WebApplication1.Controllers;
 
 namespace BallastLane.UnitTesting.Controllers
 {
     public class StudentControllerTests
     {
-
-
         [SetUp]
         public void Setup()
         {
-
         }
 
         [Test]
