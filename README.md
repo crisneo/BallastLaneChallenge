@@ -14,7 +14,7 @@ It is also required to provide an endpoint to login users and register
 ## Solution
 The following image demonstrate the architecture of the proposed solution indicating the names of the projects
 in their correspondant level:
-![Architecture](ArchitectureModel.JPG)
+![Architecture](images/ArchitectureModel.jpg)
 
 ### Libraries/Frmks used
 - NHibernate for db access
