@@ -5,6 +5,7 @@ using BallastLane.Application.Repositories;
 using BallastLane.Application.Services;
 using BallastLane.DataAccess.Repositories;
 using BallastLane.Domain.Entities;
+using BallastLane.Infrastructure.Common;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -60,7 +61,7 @@ namespace BallastLane.WebAPI.Controllers
             {
                 try
                 {
-                    var course = await _unitOfWork.Repository<Course>().CreateAsync(_mapper.Map<Course>(dto));
+                    var course = await _unitOfWork.Repository<Course>().CreateAsync(_mapper.Map<Course>(dto.Course));
                     foreach (var studentId in dto.StudendsIds)
                     {
                         var student = await _unitOfWork.Repository<Student>().GetByIdAsync(studentId);
@@ -71,7 +72,8 @@ namespace BallastLane.WebAPI.Controllers
                 }
                 catch (Exception ex)
                 {
-                    _unitOfWork.Rollback();
+                    _logger.Log(new LogMessage() { Message = ex.Message, Severity = Application.Common.LogSeverity.Error });
+                    await _unitOfWork.Rollback();
                 }
 
             }

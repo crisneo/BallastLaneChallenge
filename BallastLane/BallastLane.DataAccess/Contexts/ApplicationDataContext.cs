@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 
 namespace BallastLane.DataAccess.Contexts
 {
@@ -15,9 +16,10 @@ namespace BallastLane.DataAccess.Contexts
     {
         private readonly ISession _session;
         private ITransaction _transaction;
-        public ApplicationDataContext(ISession session)
+        public ApplicationDataContext(ISession session, ITransaction transaction = null)
         {
             _session = session;
+            _transaction = transaction;
         }
 
         public IQueryable<Student> Students => _session.Query<Student>();
