@@ -23,6 +23,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BallastLane.UnitTesting", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BallastLane.WebAPI", "BallastLane.WebAPI\BallastLane.WebAPI.csproj", "{633EBE85-5217-4108-A325-10BFA95452B7}"
 EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{08F39206-E5F4-4660-8490-56ABD8911ABC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +55,10 @@ Global
 		{633EBE85-5217-4108-A325-10BFA95452B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{633EBE85-5217-4108-A325-10BFA95452B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{633EBE85-5217-4108-A325-10BFA95452B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08F39206-E5F4-4660-8490-56ABD8911ABC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08F39206-E5F4-4660-8490-56ABD8911ABC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08F39206-E5F4-4660-8490-56ABD8911ABC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08F39206-E5F4-4660-8490-56ABD8911ABC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

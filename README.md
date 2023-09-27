@@ -21,7 +21,7 @@ in their correspondant level:
 - Swagger
 - AutoMapper
 - netcore DI
-- Log4Net(I added a not in the place in which we could used but not added)
+- Log4Net(I added a note in the place in which we could used but not added)
 - NUnit/Moq
 
 ## Notes 

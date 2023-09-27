@@ -1,0 +1,25 @@
+version: '3.4'
+ 
+networks:
+    myAppNetwork:       
+ 
+services:
+    SqlServerDb:
+        container_name: SqlServerContainer
+        image: mcr.microsoft.com/mssql/server:2017-latest
+        ports:
+            - 8002:1433
+        environment:
+            - ACCEPT_EULA=Y
+            - MSSQL_SA_PASSWORD=test2 
+    ballastlane.webapi:
+        container_name: ballastlane.webapi
+        image: ${DOCKER_REGISTRY-}ballastlanewebapi
+        ports:
+            - 8001:80 
+        build:
+          context: .
+          dockerfile: BallastLane.WebAPI\Dockerfile
+        depends_on:
+            - SqlServerDb
+        
