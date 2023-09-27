@@ -25,7 +25,7 @@ namespace BallastLane.DataAccess.Repositories
 
         public void Dispose()
         {
-            //todo: implement
+            //todo: implement disposing
         }
 
         public IGenericRepository<T> Repository<T>() where T : BaseEntity
@@ -38,6 +38,7 @@ namespace BallastLane.DataAccess.Repositories
 
             if (!_repositories.ContainsKey(type))
             {
+                //Tech Debt:  we could implement a more generic way to inject repositories in this section
                 //var repositoryType = typeof(IGenericRepository<>);
                 //var repositoryInstance = Activator.CreateInstance(repositoryType.MakeGenericType(typeof(T)), _dbContext);
                 IGenericRepository<T> repositoryInstance = null;

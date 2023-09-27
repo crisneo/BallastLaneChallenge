@@ -31,9 +31,6 @@ namespace BallastLane.UnitTesting.Controllers
         [Test]
         public async Task GetStudentsTest()
         {
-            // This version uses a mock UrlHelper.
-
-            //var repoMock = new Mock<IStudentRepository>();
             var mockRepository = new Mock<IStudentRepository>();
             mockRepository.Setup(x => x.GetAllAsync())
                 .ReturnsAsync(new List<Student>());
@@ -42,14 +39,12 @@ namespace BallastLane.UnitTesting.Controllers
 
             var controller = new StudentController(mockRepository.Object, mapperMock.Object);
 
-            // Act
             var actionResult = await controller.Get();
             var contentResult = actionResult as OkObjectResult;
 
             // Assert
             Assert.IsNotNull(contentResult);
             Assert.IsNotNull(contentResult.Value);
-            //Assert.AreEqual(42, contentResult.Content.Id);
         }
 
         [Test]
@@ -65,7 +60,6 @@ namespace BallastLane.UnitTesting.Controllers
                 Code = "Test",
             };
 
-            //var repoMock = new Mock<IStudentRepository>();
             var mockRepository = new Mock<IStudentRepository>();
             mockRepository.Setup(x => x.CreateAsync(It.IsAny<Student>()))
                 .ReturnsAsync(mockStudent);
