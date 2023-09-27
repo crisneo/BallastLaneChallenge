@@ -17,7 +17,6 @@ namespace BallastLane.WebAPI.Controllers
             _userService = userService;
         }
 
-        // GET: api/<UserController>
         [HttpPost]
         [Route("authenticate")]
         public IActionResult Authenticate([FromBody] AuthenticateDto dto)
@@ -29,7 +28,6 @@ namespace BallastLane.WebAPI.Controllers
             return BadRequest();
         }
 
-        // POST api/<UserController>
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] UserCreateDto dto)
         {
@@ -40,7 +38,6 @@ namespace BallastLane.WebAPI.Controllers
             return BadRequest();
         }
 
-        // PUT api/<UserController>/5
         [HttpPut("{id}")]
         public async Task<IActionResult> Put(int id, [FromBody] UserUpdateDto dto)
         {

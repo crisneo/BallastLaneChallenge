@@ -26,7 +26,8 @@ namespace BallastLane.WebAPI.Controllers
             _mapper = mapper;
             _logger = logger;
         }
-        // GET: api/<CoursesController>
+
+
         [HttpGet]
         public async Task<IActionResult> Get()
         {
@@ -34,7 +35,6 @@ namespace BallastLane.WebAPI.Controllers
             return Ok(courses.Select(x => _mapper.Map<CourseReadDto>(x)));
         }
 
-        // GET api/<CoursesController>/5
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
         {
@@ -42,7 +42,6 @@ namespace BallastLane.WebAPI.Controllers
             return Ok(_mapper.Map<CourseReadDto>(course));
         }
 
-        // POST api/<CoursesController>
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] CourseCreateDto dto)
         {
@@ -80,7 +79,6 @@ namespace BallastLane.WebAPI.Controllers
             return BadRequest();
         }
 
-        // DELETE api/<CoursesController>/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {

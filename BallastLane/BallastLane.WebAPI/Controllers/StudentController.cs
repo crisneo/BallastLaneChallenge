@@ -21,7 +21,6 @@ namespace WebApplication1.Controllers
             _mapper = mapper;
         }
 
-        // GET: api/<StudentController>
         [HttpGet]
         public async Task<IActionResult> Get()
         {
@@ -29,7 +28,6 @@ namespace WebApplication1.Controllers
             return Ok(res.Select(x => _mapper.Map<StudentReadDto>(x)).ToList());
         }
 
-        // GET api/<StudentController>/5
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
         {
@@ -37,7 +35,6 @@ namespace WebApplication1.Controllers
             return Ok(_mapper.Map<StudentReadDto>(student));
         }
 
-        // POST api/<StudentController>
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] StudentCreateDto dto)
         {
@@ -49,17 +46,21 @@ namespace WebApplication1.Controllers
             return Ok(student);
         }
 
-        // PUT api/<StudentController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] StudentUpdateDto value)
+        public async Task<IActionResult> Put(int id, [FromBody] StudentUpdateDto dto)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+            var student = await _repository.UpdateAsync(_mapper.Map<Student>(dto));
+            return Ok(student);
         }
 
-        // DELETE api/<StudentController>/5
         [HttpDelete("{id}")]
         public async void Delete(int id)
         {
-            //await  _repository.DeleteAsync()
+            await _repository.DeleteAsync(id);
         }
     }
 }
