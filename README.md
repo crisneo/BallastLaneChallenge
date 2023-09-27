@@ -1,6 +1,6 @@
 # Ballast Lane Application - Technical Exercise
 
-##Demo User Story
+## Demo User Story
 Create a WebAPI to store Students and Courses data, the web api should allow to create students, courses
 and register students to courses.
 It is also required to provide an endpoint to login users and register
@@ -14,10 +14,11 @@ It is also required to provide an endpoint to login users and register
 ## Solution
 The following image demonstrate the architecture of the proposed solution indicating the names of the projects
 in their correspondant level:
-![picture alt](ArchitectureModel.JPG "Solution architecture")
+![Architecture](ArchitectureModel.JPG)
 
 ### Libraries/Frmks used
 - NHibernate for db access
+- Swagger
 - AutoMapper
 - netcore DI
 - Log4Net(I added a not in the place in which we could used but not added)
